@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  ad_copy: MyText
+  released: false
+
+two:
+  name: MyString
+  ad_copy: MyText
+  released: false
