@@ -251,14 +251,119 @@ We'll add a DB migration to default donuts' released status to 'false':
       end
     end
 
-And with those tests passing, we'll check in our code.
 
+Now that those tests pass, we're green.  There's not really much to refactor, as we haven't written much code to speak
+of.  However, we can make invalid data (by nulling out the name) and stick those fixtures (examples) in
+donuts_controller_spec.rb.  Those boilerplate tests now pass too-- And with that, we'll commit and push our code.
 
  ## Nutritional Value
 
  Our customer has gotten themselves on a diet kick and - however improbably - wants to track nutritional information
  for the donuts they sell.  Improbable as it is that donuts are considered health food, they'd like to see donuts'
- macronutrients (fat, carbs, protein) content captured and made available.  Let's add those features now.
+ macronutrient (fat, carbs, protein) content, in grams, captured and displayed to the user.  Let's add those features
+ now.
+
+
+So, we need to add three fields to our Donut model: fat, carb, protein.  We don't want them to be mandatory, since we
+can create a donut before we get the labs to measure its macros.  We do, however, want to make sure we don't release a
+donut without (or with bogus) macro counts.  For this reason, We also don't want fat, protein, and carbs to have default
+values or be zero.
+
+We'll start by writing tests for the code we wish we had:
+
+      it "has no default values for fat, carb, and protein" do
+        d = FactoryGirl::create(:donut)
+        expect(d.fat).to be_nil
+        expect(d.carb).to be_nil
+        expect(d.protein).to be_nil
+      end
+
+      it "can't be released without values for fat, carb, and protein" do
+        d = FactoryGirl::create(:donut)
+        d.fat=1
+        d.carb=1
+        d.protein=nil
+        d.released = true
+        expect(d.validate).to be_falsey
+        d.protein=1
+        expect(d.validate).to be_truthy
+      end
+
+and now we have red, failing specs:
+
+    NoMethodError: undefined method `fat' for #<Donut:0x007f81841161a8>
+    /Users/john/.rvm/gems/ruby-2.1.2/gems/activemodel-4.2.0.beta4/lib/active_model/attribute_methods.rb:435:in `method_missing'
+    ./spec/models/donut_spec.rb:25:in `block (2 levels) in <top (required)>'
+
+    NoMethodError: undefined method `fat=' for #<Donut:0x007f8185e79718>
+    /Users/john/.rvm/gems/ruby-2.1.2/gems/activemodel-4.2.0.beta4/lib/active_model/attribute_methods.rb:435:in `method_missing'
+    ./spec/models/donut_spec.rb:32:in `block (2 levels) in <top (required)>'
+
+Now we go code to green:
+
+    rails g migration AddMacrosToDonuts fat:integer carb:integer protein:integer
+    rake db:migrate
+
+which gets us this:
+
+    class AddMacrosToDonuts < ActiveRecord::Migration
+      def change
+        add_column :donuts, :fat, :integer
+        add_column :donuts, :carb, :integer
+        add_column :donuts, :protein, :integer
+      end
+    end
+
+but we'll need to add logic in the Model itself to handle the more complex macronutrient constraints:
+
+    class Donut < ActiveRecord::Base
+      validates_presence_of :name
+      validates :fat,     presence: true, numericality: { greater_than: 0 }, if: :released
+      validates :carb,    presence: true, numericality: { greater_than: 0 }, if: :released
+      validates :protein, presence: true, numericality: { greater_than: 0 }, if: :released
+    end
+
+and WHAM!  All those other tests fail.  So we'll need update those fixtures hardcoded into the controller spec:
+
+    let(:valid_attributes) {
+        FactoryGirl.build(:donut).attributes.symbolize_keys
+      }
+
+    let(:invalid_attributes) {
+      {
+          name: nil,
+          released: nil,
+          ad_copy: nil,
+          fat: nil,
+          carb: nil,
+          protein: nil
+      }
+    }
+...
+
+     describe "PUT update" do
+        describe "with valid params" do
+          let(:new_attributes) {
+            FactoryGirl.build(:donut).attributes.symbolize_keys
+          }
+
+          it "updates the requested donut" do
+            donut = Donut.create! valid_attributes
+            put :update, {:id => donut.to_param, :donut => new_attributes}, valid_session
+            donut.reload
+    ##        expect(donut.name).to eq("new_hot_donut")
+    ##        expect(donut.released).to eq(true)
+    ##        expect(donut.ad_copy).to match(/The new hotness/)
+          end
+
+We replaced the 'good' exemplar with a factory-generated one, and haven't figured out how to test the non-hardcoded
+(randomly generated) parameters.
+
+
+
+
+
+
 
 
 

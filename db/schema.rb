@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125022806) do
+ActiveRecord::Schema.define(version: 20141125193148) do
 
   create_table "donuts", force: true do |t|
     t.string   "name"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 20141125022806) do
     t.boolean "released", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "fat"
+    t.integer "carb"
+    t.integer "protein"
   end
 
   add_index "donuts", ["name"], name: "index_donuts_on_name", unique: true
