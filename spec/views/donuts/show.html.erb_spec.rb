@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "donuts/show", :type => :view do
   before(:each) do
-    @donut = assign(:donut, Donut.create!())
+    @donut = assign(:donut, FactoryGirl::create(:donut))
   end
 
   it "renders attributes in <p>" do

@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122144938) do
+ActiveRecord::Schema.define(version: 20141125022806) do
 
   create_table "donuts", force: true do |t|
     t.string   "name"
     t.text     "ad_copy"
-    t.boolean  "released"
+    t.boolean "released", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
