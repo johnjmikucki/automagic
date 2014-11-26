@@ -360,13 +360,50 @@ We replaced the 'good' exemplar with a factory-generated one, and haven't figure
 (randomly generated) parameters.
 
 
+## It's the calories, stupid
+
+Our market survey was a bit biased.  Turns out that everyone not doing IIFYM really just wants to see calorie counts.
+Fortunately we can compute them from the macronutrient data we already have.  So we'll add a virtual attribute to
+expose that information to the controller and views.
+
+### Red
+
+First things first, we want to test the model's computation itself:
+
+      it "computes a calorie count with all macros present" do
+        d = FactoryGirl::create(:donut)
+        d.fat = 1     # 9 cal
+        d.carb = 1    # 4 cal
+        d.protein = 1 # 4 cal
+        expect(d.calories).to equal(17)
+      end
+
+      it "returns nil without all macros present" do
+        d = FactoryGirl::create(:donut)
+        d.fat = nil
+        d.carb = nil
+        d.protein = nil
+        expect(d.calories).to be_nil
+      end
+
+### Green
+
+In the model, we add the virtual attribute:
+
+      def calories
+        return nil if (fat.nil? or carb.nil? or protein.nil?)
+        return 9*fat+4*carb+4*protein
+      end
+
+and lo and behold, our tests pass.
+
+### Refactor
+
+Some of our specs are starting to violate the DRY principle (Don't Repeat Yourself).  We should probably refactor them
+(specs are code too!).
 
 
-
-
-
-
-
+And then we want to 
 
 
  Before we get further into the test and development cycle, let's get the test and build process automated. We'll be

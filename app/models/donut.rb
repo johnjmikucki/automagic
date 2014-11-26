@@ -3,4 +3,10 @@ class Donut < ActiveRecord::Base
   validates :fat, presence: true, numericality: {greater_than: 0}, if: :released
   validates :carb, presence: true, numericality: {greater_than: 0}, if: :released
   validates :protein, presence: true, numericality: {greater_than: 0}, if: :released
+
+  def calories
+    return nil if (fat.nil? or carb.nil? or protein.nil?)
+    return 9*fat+4*carb+4*protein
+  end
+
 end

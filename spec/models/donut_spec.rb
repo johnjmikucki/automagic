@@ -38,4 +38,19 @@ RSpec.describe Donut, :type => :model do
     expect(d.validate).to be_truthy
   end
 
+  it "computes a calorie count with all macros present" do
+    d = FactoryGirl::create(:donut)
+    d.fat = 1 # 9 cal
+    d.carb = 1 # 4 cal
+    d.protein = 1 # 4 cal
+    expect(d.calories).to equal(17)
+  end
+
+  it "returns nil without all macros present" do
+    d = FactoryGirl::create(:donut)
+    d.fat = nil
+    d.carb = nil
+    d.protein = nil
+    expect(d.calories).to be_nil
+  end
 end
