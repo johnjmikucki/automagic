@@ -18,24 +18,17 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe DonutsController, :type => :controller do
+RSpec.describe DonutsController do
 
   # This should return the minimal set of attributes required to create a valid
   # Donut. As you add validations to Donut, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    FactoryGirl.build(:donut).attributes.symbolize_keys
+    attributes_for(:donut)
   }
 
   let(:invalid_attributes) {
-    {
-        name: nil,
-        released: nil,
-        ad_copy: nil,
-        fat: nil,
-        carb: nil,
-        protein: nil
-    }
+    attributes_for(:donut, name: nil)
   }
 
   # This should return the minimal set of values that should be in the session
@@ -45,15 +38,15 @@ RSpec.describe DonutsController, :type => :controller do
 
   describe "GET index" do
     it "assigns all donuts as @donuts" do
-      donut = Donut.create! valid_attributes
+      donut = create(:donut)
       get :index, {}, valid_session
-      expect(assigns(:donuts)).to eq([donut])
+      expect(assigns(:donuts)).to match_array([donut])
     end
   end
 
   describe "GET show" do
     it "assigns the requested donut as @donut" do
-      donut = Donut.create! valid_attributes
+      donut = Donut.create!(valid_attributes)
       get :show, {:id => donut.to_param}, valid_session
       expect(assigns(:donut)).to eq(donut)
     end
@@ -110,21 +103,28 @@ RSpec.describe DonutsController, :type => :controller do
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        FactoryGirl.build(:donut).attributes.symbolize_keys
-        # {
-        #     # name: "new_hot_donut",
-        #     # released:true,
-        #     # ad_copy: "The new hotness.  You want this baby in your coffee."
-        # }
+        {
+            name: "chocolate",
+            ad_copy: "yum yum yum"
+        }
       }
 
       it "updates the requested donut" do
-        donut = Donut.create! valid_attributes
+        # ap valid_attributes
+        # ap new_attributes
+        donut = Donut.create!(valid_attributes)
+        # ap donut
         put :update, {:id => donut.to_param, :donut => new_attributes}, valid_session
         donut.reload
-##        expect(donut.name).to eq("new_hot_donut")
-##        expect(donut.released).to eq(true)
-##        expect(donut.ad_copy).to match(/The new hotness/)
+        # ap donut
+        # ap :name
+        # ap :ad_copy
+        # ap new_attributes[:name]
+        # ap donut.name
+        # ap new_attributes[:ad_copy]
+        # ap donut.ad_copy
+        expect(donut.name).to eq(new_attributes[:name])
+        expect(donut.ad_copy).to eq(new_attributes[:ad_copy])
       end
 
       it "assigns the requested donut as @donut" do
@@ -143,12 +143,15 @@ RSpec.describe DonutsController, :type => :controller do
     describe "with invalid params" do
       it "assigns the donut as @donut" do
         donut = Donut.create! valid_attributes
+        donut.name = nil
         put :update, {:id => donut.to_param, :donut => invalid_attributes}, valid_session
         expect(assigns(:donut)).to eq(donut)
       end
 
       it "re-renders the 'edit' template" do
         donut = Donut.create! valid_attributes
+        donut.name = nil
+
         put :update, {:id => donut.to_param, :donut => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
