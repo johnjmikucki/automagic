@@ -1,4 +1,5 @@
 FROM rails:onbuild
+CMD ["./your-daemon-or-script.rb"]
 
 
 #
@@ -19,4 +20,4 @@ FROM rails:onbuild
 #RUN passenger-install-nginx-module --auto
 #
 #ENTRYPOINT ["/usr/local/bin/jenkins.sh"]
-#
+#`
