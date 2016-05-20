@@ -7,13 +7,52 @@ group :development, :test do
   gem 'cucumber'
   gem 'pry-rails'
   gem 'awesome_print'
+
+  gem 'guard'
+  gem 'better_errors'
+
+  # fault injection to improve testing
+  gem 'heckle', :require => false
+  gem 'flog', :require => false
+  gem 'flay', :require => false
+  gem 'rubocop', :require => false
+
+  # scans for code smells with rubocop, flay, flog
+  gem "rubycritic", :require => false
+
+  # guard plugin for rubycritic, reruns when files change
+  gem "guard-rubycritic", :require => false
+
+  # rerun rspec tests when files change
+  gem "guard-rspec", :require => false
+
+  # rerun brakeman (checks for rails sec. vulns) when files change
+  gem "guard-brakeman", :require => false
+
+  # not sure I need this with guard-rubycritic
+  gem "guard-rubocop", :require => false
+
+  # look for rails code smells
+  gem "guard-rails_best_practices", :require => false
+
+  # scan for sec vulns (CVEs I think) in bundled gems
+  gem "guard-bundler-audit", :require => false
+  #gem "guard-bdd", :require => false
+
 end
 
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+
+  # added a whole bunch of nifty testing and code-quality gems.
+  # Descriptions below...
+
+  # simple code coverage metrics
   gem 'simplecov', :require => false
+
+
 end
 
 
