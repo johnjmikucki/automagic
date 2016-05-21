@@ -21,7 +21,7 @@ class DonutsController < ApplicationController
   def edit
   end
 
-  # POST /donuts
+  # POST /donutskjbjj
   # POST /donuts.json
   def create
     @donut = Donut.new(donut_params)
@@ -62,12 +62,12 @@ class DonutsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
     def set_donut
       @donut = Donut.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet, only allow the white list through.
     def donut_params
       params.require(:donut).permit(:name, :ad_copy, :released)
     end

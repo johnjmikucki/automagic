@@ -17041,3 +17041,772 @@ Completed 200 OK in 159ms (Views: 151.4ms | ActiveRecord: 0.2ms)
   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   Rendered donuts/show.html.erb (0.8ms)
   [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Lightweight Wooden Keyboard"], ["created_at", "2016-03-13 01:38:25.783172"], ["updated_at", "2016-03-13 01:38:25.783172"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#index as HTML
+  Rendered donuts/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+  [1m[35mDonut Load (0.1ms)[0m  SELECT "donuts".* FROM "donuts"
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Practical Cotton Chair"], ["created_at", "2016-03-13 01:38:25.805322"], ["updated_at", "2016-03-13 01:38:25.805322"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered donuts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by DonutsController#new as HTML
+  Rendered donuts/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Mediocre Plastic Bottle"], ["created_at", "2016-03-13 01:38:25.825317"], ["updated_at", "2016-03-13 01:38:25.825317"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered donuts/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "donuts"[0m
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>"Gorgeous Rubber Watch"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gorgeous Rubber Watch"], ["created_at", "2016-03-13 01:38:25.840928"], ["updated_at", "2016-03-13 01:38:25.840928"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "donuts"[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>"Aerodynamic Iron Pants"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Aerodynamic Iron Pants"], ["created_at", "2016-03-13 01:38:25.849817"], ["updated_at", "2016-03-13 01:38:25.849817"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>"Awesome Plastic Gloves"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Awesome Plastic Gloves"], ["created_at", "2016-03-13 01:38:25.859394"], ["updated_at", "2016-03-13 01:38:25.859394"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts"  ORDER BY "donuts"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>nil}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>nil}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Durable Wool Bottle"], ["created_at", "2016-03-13 01:38:25.902380"], ["updated_at", "2016-03-13 01:38:25.902380"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>"chocolate", "ad_copy"=>"yum yum yum"}, "id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.4ms)[0m  UPDATE "donuts" SET "name" = ?, "ad_copy" = ?, "updated_at" = ? WHERE "donuts"."id" = ?  [["name", "chocolate"], ["ad_copy", "yum yum yum"], ["updated_at", "2016-03-13 01:38:25.911764"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 13ms (ActiveRecord: 3.6ms)
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Intelligent Rubber Table"], ["created_at", "2016-03-13 01:38:25.928634"], ["updated_at", "2016-03-13 01:38:25.928634"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>"Intelligent Rubber Table"}, "id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Ergonomic Plastic Keyboard"], ["created_at", "2016-03-13 01:38:25.939252"], ["updated_at", "2016-03-13 01:38:25.939252"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>"Ergonomic Plastic Keyboard"}, "id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Enormous Bronze Watch"], ["created_at", "2016-03-13 01:38:25.960922"], ["updated_at", "2016-03-13 01:38:25.960922"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>nil}, "id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Heavy Duty Linen Computer"], ["created_at", "2016-03-13 01:38:25.980236"], ["updated_at", "2016-03-13 01:38:25.980236"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>nil}, "id"=>"1"}
+  [1m[35mDonut Load (0.3ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Incredible Rubber Lamp"], ["created_at", "2016-03-13 01:38:25.997168"], ["updated_at", "2016-03-13 01:38:25.997168"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "donuts"
+Processing by DonutsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDonut Load (0.0ms)[0m  [1mSELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mDELETE FROM "donuts" WHERE "donuts"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "donuts"[0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lightweight Leather Table"], ["created_at", "2016-03-13 01:38:26.010341"], ["updated_at", "2016-03-13 01:38:26.010341"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by DonutsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDonut Load (0.1ms)[0m  [1mSELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "donuts" WHERE "donuts"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "aaa"], ["created_at", "2016-03-13 01:38:26.029844"], ["updated_at", "2016-03-13 01:38:26.029844"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "aaa"], ["created_at", "2016-03-13 01:38:26.033339"], ["updated_at", "2016-03-13 01:38:26.033339"]]
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Intelligent Concrete Lamp"], ["created_at", "2016-03-13 01:38:26.040197"], ["updated_at", "2016-03-13 01:38:26.040197"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Intelligent Steel Bottle"], ["created_at", "2016-03-13 01:38:26.045834"], ["updated_at", "2016-03-13 01:38:26.045834"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sleek Wooden Shoes"], ["created_at", "2016-03-13 01:38:26.057028"], ["updated_at", "2016-03-13 01:38:26.057028"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lightweight Cotton Bag"], ["created_at", "2016-03-13 01:38:26.066876"], ["updated_at", "2016-03-13 01:38:26.066876"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/donuts" for 127.0.0.1 at 2016-03-12 20:38:26 -0500
+Processing by DonutsController#index as HTML
+  [1m[36mDonut Load (0.2ms)[0m  [1mSELECT "donuts".* FROM "donuts"[0m
+  Rendered donuts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 15ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Incredible Aluminum Hat"], ["created_at", "2016-03-13 01:38:26.145022"], ["updated_at", "2016-03-13 01:38:26.145022"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered donuts/_form.html.erb (12.2ms)
+  Rendered donuts/edit.html.erb (31.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Ergonomic Marble Pants"], ["created_at", "2016-03-13 01:38:26.206119"], ["updated_at", "2016-03-13 01:38:26.206119"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Durable Rubber Hat"], ["created_at", "2016-03-13 01:38:26.207545"], ["updated_at", "2016-03-13 01:38:26.207545"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered donuts/index.html.erb (3.4ms)
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  Rendered donuts/_form.html.erb (4.4ms)
+  Rendered donuts/new.html.erb (6.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Fantastic Plastic Bottle"], ["created_at", "2016-03-13 01:38:26.242625"], ["updated_at", "2016-03-13 01:38:26.242625"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered donuts/show.html.erb (2.7ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Fantastic Leather Chair"], ["created_at", "2016-05-19 00:38:10.894553"], ["updated_at", "2016-05-19 00:38:10.894553"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#index as HTML
+  Rendered donuts/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+  [1m[35mDonut Load (0.1ms)[0m  SELECT "donuts".* FROM "donuts"
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sleek Plastic Chair"], ["created_at", "2016-05-19 00:38:10.921550"], ["updated_at", "2016-05-19 00:38:10.921550"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered donuts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by DonutsController#new as HTML
+  Rendered donuts/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Ergonomic Bronze Clock"], ["created_at", "2016-05-19 00:38:10.945904"], ["updated_at", "2016-05-19 00:38:10.945904"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered donuts/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "donuts"[0m
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>"Ergonomic Concrete Chair"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ergonomic Concrete Chair"], ["created_at", "2016-05-19 00:38:10.964225"], ["updated_at", "2016-05-19 00:38:10.964225"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "donuts"[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>"Awesome Cotton Clock"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Awesome Cotton Clock"], ["created_at", "2016-05-19 00:38:10.977431"], ["updated_at", "2016-05-19 00:38:10.977431"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>"Fantastic Steel Chair"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Fantastic Steel Chair"], ["created_at", "2016-05-19 00:38:10.988954"], ["updated_at", "2016-05-19 00:38:10.988954"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+  [1m[35mDonut Load (0.2ms)[0m  SELECT  "donuts".* FROM "donuts"  ORDER BY "donuts"."id" DESC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>nil}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>nil}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Small Cotton Shoes"], ["created_at", "2016-05-19 00:38:11.034139"], ["updated_at", "2016-05-19 00:38:11.034139"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>"chocolate", "ad_copy"=>"yum yum yum"}, "id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "donuts" SET "name" = ?, "ad_copy" = ?, "updated_at" = ? WHERE "donuts"."id" = ?  [["name", "chocolate"], ["ad_copy", "yum yum yum"], ["updated_at", "2016-05-19 00:38:11.038697"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (2.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Aerodynamic Paper Lamp"], ["created_at", "2016-05-19 00:38:11.051059"], ["updated_at", "2016-05-19 00:38:11.051059"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>"Aerodynamic Paper Lamp"}, "id"=>"1"}
+  [1m[35mDonut Load (0.2ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Practical Marble Coat"], ["created_at", "2016-05-19 00:38:11.065248"], ["updated_at", "2016-05-19 00:38:11.065248"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>"Practical Marble Coat"}, "id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Intelligent Rubber Computer"], ["created_at", "2016-05-19 00:38:11.080174"], ["updated_at", "2016-05-19 00:38:11.080174"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>nil}, "id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Rustic Marble Bag"], ["created_at", "2016-05-19 00:38:11.097683"], ["updated_at", "2016-05-19 00:38:11.097683"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>nil}, "id"=>"1"}
+  [1m[35mDonut Load (0.2ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Intelligent Paper Bag"], ["created_at", "2016-05-19 00:38:11.117236"], ["updated_at", "2016-05-19 00:38:11.117236"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "donuts"
+Processing by DonutsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDonut Load (0.4ms)[0m  [1mSELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "donuts" WHERE "donuts"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "donuts"[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Durable Wool Clock"], ["created_at", "2016-05-19 00:38:11.132359"], ["updated_at", "2016-05-19 00:38:11.132359"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by DonutsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDonut Load (0.1ms)[0m  [1mSELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "donuts" WHERE "donuts"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "aaa"], ["created_at", "2016-05-19 00:38:11.156878"], ["updated_at", "2016-05-19 00:38:11.156878"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "aaa"], ["created_at", "2016-05-19 00:38:11.162867"], ["updated_at", "2016-05-19 00:38:11.162867"]]
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Incredible Copper Coat"], ["created_at", "2016-05-19 00:38:11.169177"], ["updated_at", "2016-05-19 00:38:11.169177"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mediocre Linen Bench"], ["created_at", "2016-05-19 00:38:11.177088"], ["updated_at", "2016-05-19 00:38:11.177088"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Incredible Steel Chair"], ["created_at", "2016-05-19 00:38:11.185301"], ["updated_at", "2016-05-19 00:38:11.185301"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Durable Wool Car"], ["created_at", "2016-05-19 00:38:11.192571"], ["updated_at", "2016-05-19 00:38:11.192571"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/donuts" for 127.0.0.1 at 2016-05-18 20:38:11 -0400
+Processing by DonutsController#index as HTML
+  [1m[36mDonut Load (0.3ms)[0m  [1mSELECT "donuts".* FROM "donuts"[0m
+  Rendered donuts/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 15ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (1.8ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Incredible Marble Lamp"], ["created_at", "2016-05-19 00:38:11.256547"], ["updated_at", "2016-05-19 00:38:11.256547"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered donuts/_form.html.erb (12.1ms)
+  Rendered donuts/edit.html.erb (43.6ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Enormous Rubber Keyboard"], ["created_at", "2016-05-19 00:38:11.325432"], ["updated_at", "2016-05-19 00:38:11.325432"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fantastic Plastic Bottle"], ["created_at", "2016-05-19 00:38:11.327772"], ["updated_at", "2016-05-19 00:38:11.327772"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered donuts/index.html.erb (2.7ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  Rendered donuts/_form.html.erb (2.0ms)
+  Rendered donuts/new.html.erb (2.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Awesome Silk Pants"], ["created_at", "2016-05-19 00:38:11.376492"], ["updated_at", "2016-05-19 00:38:11.376492"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered donuts/show.html.erb (0.8ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Gorgeous Copper Wallet"], ["created_at", "2016-05-21 14:52:16.200250"], ["updated_at", "2016-05-21 14:52:16.200250"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#index as HTML
+  Rendered donuts/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+  [1m[35mDonut Load (0.1ms)[0m  SELECT "donuts".* FROM "donuts"
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Durable Concrete Table"], ["created_at", "2016-05-21 14:52:16.228563"], ["updated_at", "2016-05-21 14:52:16.228563"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered donuts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 15ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by DonutsController#new as HTML
+  Rendered donuts/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Heavy Duty Wool Car"], ["created_at", "2016-05-21 14:52:16.257674"], ["updated_at", "2016-05-21 14:52:16.257674"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered donuts/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "donuts"[0m
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>"Mediocre Leather Keyboard"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mediocre Leather Keyboard"], ["created_at", "2016-05-21 14:52:16.278898"], ["updated_at", "2016-05-21 14:52:16.278898"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "donuts"[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>"Practical Wooden Keyboard"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Practical Wooden Keyboard"], ["created_at", "2016-05-21 14:52:16.292102"], ["updated_at", "2016-05-21 14:52:16.292102"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>"Intelligent Plastic Watch"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Intelligent Plastic Watch"], ["created_at", "2016-05-21 14:52:16.309415"], ["updated_at", "2016-05-21 14:52:16.309415"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+  [1m[35mDonut Load (0.2ms)[0m  SELECT  "donuts".* FROM "donuts"  ORDER BY "donuts"."id" DESC LIMIT 1
+  [1m[36m (1.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>nil}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by DonutsController#create as HTML
+  Parameters: {"donut"=>{"name"=>nil}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sleek Paper Watch"], ["created_at", "2016-05-21 14:52:16.341529"], ["updated_at", "2016-05-21 14:52:16.341529"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>"chocolate", "ad_copy"=>"yum yum yum"}, "id"=>"1"}
+  [1m[35mDonut Load (0.0ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  UPDATE "donuts" SET "name" = ?, "ad_copy" = ?, "updated_at" = ? WHERE "donuts"."id" = ?  [["name", "chocolate"], ["ad_copy", "yum yum yum"], ["updated_at", "2016-05-21 14:52:16.345431"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Ergonomic Marble Coat"], ["created_at", "2016-05-21 14:52:16.357657"], ["updated_at", "2016-05-21 14:52:16.357657"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>"Ergonomic Marble Coat"}, "id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Heavy Duty Aluminum Shirt"], ["created_at", "2016-05-21 14:52:16.368206"], ["updated_at", "2016-05-21 14:52:16.368206"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>"Heavy Duty Aluminum Shirt"}, "id"=>"1"}
+  [1m[35mDonut Load (0.0ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Small Rubber Table"], ["created_at", "2016-05-21 14:52:16.380996"], ["updated_at", "2016-05-21 14:52:16.380996"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>nil}, "id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/edit.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Aerodynamic Rubber Bench"], ["created_at", "2016-05-21 14:52:16.395824"], ["updated_at", "2016-05-21 14:52:16.395824"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by DonutsController#update as HTML
+  Parameters: {"donut"=>{"name"=>nil}, "id"=>"1"}
+  [1m[35mDonut Load (0.1ms)[0m  SELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered donuts/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Enormous Leather Knife"], ["created_at", "2016-05-21 14:52:16.413677"], ["updated_at", "2016-05-21 14:52:16.413677"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "donuts"
+Processing by DonutsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDonut Load (0.1ms)[0m  [1mSELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "donuts" WHERE "donuts"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "donuts"[0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Heavy Duty Linen Chair"], ["created_at", "2016-05-21 14:52:16.428607"], ["updated_at", "2016-05-21 14:52:16.428607"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by DonutsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDonut Load (0.0ms)[0m  [1mSELECT  "donuts".* FROM "donuts" WHERE "donuts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "donuts" WHERE "donuts"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/donuts
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "aaa"], ["created_at", "2016-05-21 14:52:16.448764"], ["updated_at", "2016-05-21 14:52:16.448764"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "aaa"], ["created_at", "2016-05-21 14:52:16.456738"], ["updated_at", "2016-05-21 14:52:16.456738"]]
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sleek Iron Lamp"], ["created_at", "2016-05-21 14:52:16.463487"], ["updated_at", "2016-05-21 14:52:16.463487"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Heavy Duty Marble Wallet"], ["created_at", "2016-05-21 14:52:16.468097"], ["updated_at", "2016-05-21 14:52:16.468097"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Incredible Steel Knife"], ["created_at", "2016-05-21 14:52:16.479700"], ["updated_at", "2016-05-21 14:52:16.479700"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Intelligent Marble Car"], ["created_at", "2016-05-21 14:52:16.489436"], ["updated_at", "2016-05-21 14:52:16.489436"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/donuts" for 127.0.0.1 at 2016-05-21 10:52:16 -0400
+Processing by DonutsController#index as HTML
+  [1m[36mDonut Load (0.3ms)[0m  [1mSELECT "donuts".* FROM "donuts"[0m
+  Rendered donuts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 23ms (Views: 13.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sleek Silk Clock"], ["created_at", "2016-05-21 14:52:16.569214"], ["updated_at", "2016-05-21 14:52:16.569214"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered donuts/_form.html.erb (13.2ms)
+  Rendered donuts/edit.html.erb (44.7ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Incredible Silk Bottle"], ["created_at", "2016-05-21 14:52:16.643516"], ["updated_at", "2016-05-21 14:52:16.643516"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gorgeous Wooden Shirt"], ["created_at", "2016-05-21 14:52:16.645525"], ["updated_at", "2016-05-21 14:52:16.645525"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered donuts/index.html.erb (1.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  Rendered donuts/_form.html.erb (1.8ms)
+  Rendered donuts/new.html.erb (2.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "donuts" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Gorgeous Silk Gloves"], ["created_at", "2016-05-21 14:52:16.688344"], ["updated_at", "2016-05-21 14:52:16.688344"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered donuts/show.html.erb (1.8ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
