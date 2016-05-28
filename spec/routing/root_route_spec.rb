@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "default route", :type => :routing do
+RSpec.describe "default route", :type => :routing do
   it 'should route / to the donut index' do
     expect(:get => "/").to route_to(:controller => "donuts", :action => "index")
   end

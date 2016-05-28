@@ -12,10 +12,12 @@ group :development, :test do
   gem 'better_errors'
 
   # fault injection to improve testing
-  gem 'heckle', :require => false
+  # outdated gem 'heckle', :require => false
   gem 'flog', :require => false
   gem 'flay', :require => false
   gem 'rubocop', :require => false
+  gem 'mutant', :require => false
+  gem 'mutant-rspec', :require => false
 
   # scans for code smells with rubocop, flay, flog
   gem "rubycritic", :require => false
