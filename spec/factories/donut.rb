@@ -1,7 +1,7 @@
 # spec/factories/donuts.rb
 require 'faker' # gin up random data
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :donut do
 
     name { Faker::Commerce.product_name }

@@ -1,21 +1,24 @@
 source 'https://rubygems.org'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.4'
-  gem "factory_girl_rails", "~> 4.0"
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
   gem 'faker'
   gem 'cucumber'
   gem 'pry-rails'
   gem 'awesome_print'
-
   gem 'guard'
   gem 'better_errors'
+  gem 'tzinfo-data'
+
 
   # fault injection to improve testing
   # outdated gem 'heckle', :require => false
   gem 'flog', :require => false
   gem 'flay', :require => false
   gem 'rubocop', :require => false
+  gem 'rubocop-performance'
+
   gem 'mutant', :require => false
   gem 'mutant-rspec', :require => false
 
@@ -45,10 +48,10 @@ group :development, :test do
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0.0.beta4'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'web-console'
 end
 
 group :test do
@@ -68,26 +71,26 @@ end
 
 gem 'dpl'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2'
+gem 'rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jQuery as the JavaScript library
-gem 'jquery-rails', '~> 4.0.0.beta2'
+gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '~> 2.5.3'
+gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

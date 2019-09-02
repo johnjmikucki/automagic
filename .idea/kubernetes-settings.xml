@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="KubernetesSettings">
+    <option name="apiVersion" value="1.14" />
+    <specSources>
+      <SpecSource>
+        <option name="pathOrUrl" value="https://192.168.2.216:8443" />
+      </SpecSource>
+    </specSources>
+  </component>
+</project>

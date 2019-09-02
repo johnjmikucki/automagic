@@ -1,7 +1,7 @@
 # RSpec
-# spec/support/factory_girl.rb
+# spec/support/factory_bot.rb
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 end
 #
 # # Test::Unit
@@ -10,7 +10,7 @@ end
 # end
 
 # Cucumber
-World(FactoryGirl::Syntax::Methods)
+World(FactoryBot::Syntax::Methods)
 
 # # Spinach
 # class Spinach::FeatureSteps
